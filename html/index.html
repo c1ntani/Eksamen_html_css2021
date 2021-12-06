@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      discription="Akvariet i Sandefjord er kåret til Norges mest populære akvarium."
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Sandefjord akvarium</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="/html/index.html" class="logo">Sandefjord akvarium</a>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"
+        ><span class="nav-icon"></span
+      ></label>
+      <ul class="menu">
+        <li><a href="about.html">Om oss</a></li>
+        <li><a href="ticket.html">Billetter</a></li>
+        <li><a href="contact.html">Kontakt oss</a></li>
+      </ul>
+    </header>
+
+    <!--Forside: Høydepunktet og fokuset var sjøløveshow. Dette er det første brukeren vil møte på. Har dermed lagt en direkte-bestillingsknapp for å gjøre det enkelt for brukeren å navigere rett til billettsalg.-->
+    <div class="frontpage">
+      <div class="background">
+        <div class="main-container">
+          <h1>NY FORESTILLING 2022: SJØLØVE-SHOW!</h1>
+          <p>
+            Sandefjord Akvarium åpner januar 2022, og sjøløvene skal ha
+            offisiell åpningsforestilling!
+          </p>
+          <a href="ticket.html" class="order-btn">Bestill her</a>
+        </div>
+      </div>
+    </div>
+
+    <!--Bruker figure og figurecaption til å lage bilde med tekst.-->
+    <main class="wrapper">
+      <section class="content" id="content">
+        <ul>
+          <li>
+            <figure>
+              <img src="/images/girl.jpg" alt="turtle" />
+              <figcaption>
+                <h3>Velkommen til åpningsdag</h3>
+              </figcaption>
+            </figure>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
+              repellendus consectetur molestiae quo? Distinctio ratione
+              dignissimos aliquam qui vitae sequi? At impedit suscipit
+              voluptates, dolore debitis delectus earum assumenda pariatur.
+            </p>
+            <div class="read-btn">
+              <a href="#">Les mer</a>
+            </div>
+          </li>
+
+          <li>
+            <figure>
+              <img src="/images/sealion4.jpg" alt="sealion" />
+              <figcaption>
+                <h3>Se vårt sjøløve-show!</h3>
+              </figcaption>
+            </figure>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
+              repellendus consectetur molestiae quo? Distinctio ratione
+              dignissimos aliquam qui vitae sequi? At impedit suscipit
+              voluptates, dolore debitis delectus earum assumenda pariatur.
+            </p>
+            <div class="read-btn">
+              <a href="#">Les mer</a>
+            </div>
+          </li>
+
+          <li>
+            <figure>
+              <img src="/images/walrus.jpg" alt="walrus" />
+              <figcaption><h3>En opplevelse for store og små</h3></figcaption>
+            </figure>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
+              repellendus consectetur molestiae quo? Distinctio ratione
+              dignissimos aliquam qui vitae sequi? At impedit suscipit
+              voluptates, dolore debitis delectus earum assumenda pariatur.
+            </p>
+            <div class="read-btn">
+              <a href="#">Les mer</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <!--Tar i bruk flex for å lage et responsiv bildegalleri for ulike skjermstørrelser-->
+    <h1 class="img-gallery">Sandefjords rike dyreliv</h1>
+
+    <div class="flex-gallery">
+      <div class="row">
+        <img src="/images/fish2.jpg" alt="1" />
+        <img src="/images/fish3.jpg" alt="2" />
+        <img src="/images/fish4.jpg" alt="3" />
+        <img src="/images/fish5.jpg" alt="4" />
+        <img src="/images/fish7.jpg" alt="5" />
+        <img src="/images/fish8.jpg" alt="6" />
+      </div>
+    </div>
+
+    <!--Her starter footer. Tar også i bruk script for å lage varsel når man trykker på "abonner"-knappen-->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-left">
+          <h3>Sandefjord <span> akvarium</span></h3>
+          <p class="footer-links">
+            <a href="about.html">Om oss</a>
+            <a href="ticket.html">Billetter</a>
+            <a href="contact.html">Kontakt oss</a>
+          </p>
+          <p class="footer-copyright">Sandefjord akvarium © 2021</p>
+        </div>
+
+        <div class="footer-right">
+          <p>Nyhetsbrev</p>
+
+          <form>
+            <input type="text" name="email" placeholder="Email" />
+            <button onClick="myFunction()">Abonner</button>
+            <script>
+              function myFunction() {
+                alert("Takk for at du abonnerer på vårt nyhetsbrev!");
+              }
+            </script>
+          </form>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

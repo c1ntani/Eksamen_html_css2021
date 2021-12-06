@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+a {
+  color: #4682b4;
+}
+
+.header {
+  background-color: white;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: white;
+  text-transform: uppercase;
+}
+.header ul a {
+  display: block;
+  margin: 10px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+.header ul a:hover {
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.header .logo {
+  float: left;
+  display: flex;
+  font-size: 30px;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+/*Bruker ease-out for å få en myk åpning/lukking av menyen*/
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.header .menu-icon {
+  padding: 23px 20px;
+  position: relative;
+  float: right;
+  cursor: pointer;
+}
+
+.header .menu-icon .nav-icon {
+  background: #333;
+  display: block;
+  height: 2px;
+  width: 15px;
+  position: relative;
+  transition: background 0.2s ease-out;
+}
+/*Styling av hamburger-meny/ikonet - before og after for å de to siste streke til hamburgermenyen over og under */
+.header .menu-icon .nav-icon:before {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  top: 5px;
+}
+/*Styling av hamburger-meny/ikonet */
+.header .menu-icon .nav-icon:after {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  top: -5px;
+}
+
+/*fjerne checkboxen*/
+.header .menu-btn {
+  display: none;
+}
+
+/*Når menyen vår er "checked", er når man trykker på hamburger-menyen, så vil den åpne/lukke seg når man trykker på den. Denne snakker med ".header .menu" hvor vi har lagt til transition. */
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+/* For at gjøre skjermen responsiv*/
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+/*Bestilling av billett. Kilde: https://www.youtube.com/watch?v=ShpH_1EPox0&t=716s&ab_channel=brilex007*/
+.container-ticket {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  padding-top: 100px;
+}
+
+.container-time {
+  background-color: #b8d5e6;
+  padding: 50px;
+  text-align: center;
+}
+
+.heading {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.heading-days {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.container-time p {
+  padding: 10px;
+}
+
+h4 {
+  font-size: medium;
+}
+
+.container-form {
+  padding: 50px;
+  color: #000;
+  background-color: aliceblue;
+}
+
+form {
+  display: grid;
+  grid-row-gap: 20px;
+}
+
+form p {
+  font-weight: bold;
+  padding-right: 80px;
+}
+
+.form-field {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-field p {
+  float: left;
+  width: 200px;
+}
+
+.ticket-btn {
+  width: 40%;
+  padding: 20px;
+  font-size: 10px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.ticket-btn:hover {
+  opacity: 0.5;
+}
+@media only screen and (max-width: 600px) {
+  .container-ticket {
+    width: 100%;
+    display: grid;
+    padding-top: 50%;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  .container-time {
+    width: 100%;
+  }
+
+  .container-form {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}

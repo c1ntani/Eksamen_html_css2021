@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      discription="Kontakt kundeservice for henvendelser via skjema"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Akvariumet vårt</title>
+    <link rel="stylesheet" href="/css/contact.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="/html/index.html" class="logo">Sandefjord akvarium</a>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"
+        ><span class="nav-icon"></span
+      ></label>
+      <ul class="menu">
+        <li><a href="index.html">Forside</a></li>
+        <li><a href="about.html">Om oss</a></li>
+        <li><a href="ticket.html">Billetter</a></li>
+        <li><a href="contact.html">Kontakt oss</a></li>
+      </ul>
+    </header>
+
+    <!--Kilde: https://www.youtube.com/watch?v=Db5jCkrVgAw&t=394s&ab_channel=TrueCoder-->
+    <div class="contact-container">
+      <div class="contact-box">
+        <div class="left-content"></div>
+        <div class="right-content">
+          <h2>Kontakt oss</h2>
+          <input type="text" class="input-field" placeholder="Navn" />
+          <input type="email" class="input-field" placeholder="E-post" />
+          <input type="text" class="input-field" placeholder="Telefon" />
+          <textarea class="input-field" placeholder="Melding"></textarea>
+          <button class="contact-btn" onclick="myFunction()">
+            Send melding
+          </button>
+
+          <!--Tar også i bruk script for å lage varsel når man trykker på "Send melding"-knappen-->
+          <script>
+            function myFunction() {
+              alert(
+                "Takk for din henvendelse! Vi vil svare deg innen 1-2 virkedager."
+              );
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

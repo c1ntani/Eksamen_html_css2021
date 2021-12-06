@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #4682b4;
+}
+
+.header {
+  background-color: white;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: white;
+  text-transform: uppercase;
+}
+.header ul a {
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.header ul a:hover {
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.header .logo {
+  float: left;
+  display: flex;
+  font-size: 30px;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+/*Bruker ease-out for å få en myk åpning/lukking av menyen*/
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.header .menu-icon {
+  padding: 23px 20px;
+  position: relative;
+  float: right;
+  cursor: pointer;
+}
+
+.header .menu-icon .nav-icon {
+  background: #333;
+  display: block;
+  height: 2px;
+  width: 15px;
+  position: relative;
+  transition: background 0.2s ease-out;
+}
+/*Styling av hamburger-meny/ikonet - before og after for å de to siste streke til hamburgermenyen over og under */
+.header .menu-icon .nav-icon:before {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  top: 5px;
+}
+/*Styling av hamburger-meny/ikonet */
+.header .menu-icon .nav-icon:after {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  top: -5px;
+}
+
+/*fjerne checkboxen*/
+.header .menu-btn {
+  display: none;
+}
+
+/*Når menyen vår er "checked", er når man trykker på hamburger-menyen, så vil den åpne/lukke seg når man trykker på den. Denne snakker med ".header .menu" hvor vi har lagt til transition. */
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+/* For at gjøre skjermen responsiv*/
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: url("/images/dolphin\ about.jpg") no-repeat center;
+  background-size: cover;
+  text-align: center;
+}
+
+section {
+  padding: 20px;
+}
+
+/*About*/
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: url(/images/dolphin\ about.jpg) no-repeat center center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  min-height: 40rem;
+}
+
+/*slide med keyframes og animation er brukt for å kunne kaste lys på hva Sandefjord Akvarium har å tilby ved et slideshow*/
+.slider {
+  width: 800px;
+  height: 400px;
+  margin: 100px auto;
+  animation: slide 20s infinite;
+}
+
+@keyframes slide {
+  0% {
+    background: url(/images/fish7.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  25% {
+    background: url(/images/aquarium.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  50% {
+    background: url(/images/fish10.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  75% {
+    background: url(/images/fish11.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  100% {
+    background: url(/images/stingray.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.btn {
+  text-align: center;
+  margin: 100px;
+}

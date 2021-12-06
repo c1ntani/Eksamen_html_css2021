@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      discription="Vi tilbyr rabatt til barn, studenter og honnør. Kjøp billett på nett, og spar miljøet og penger!"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Sandefjord akvarium</title>
+    <link rel="stylesheet" href="/css/ticket.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="/html/index.html" class="logo">Sandefjord akvarium</a>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"
+        ><span class="nav-icon"></span
+      ></label>
+      <ul class="menu">
+        <li><a href="index.html">Forside</a></li>
+        <li><a href="about.html">Om oss</a></li>
+        <li><a href="ticket.html">Billetter</a></li>
+        <li><a href="contact.html">Kontakt oss</a></li>
+      </ul>
+    </header>
+
+    <!--Billettsystem er inspirert av, kilde: https://www.youtube.com/watch?v=ShpH_1EPox0&t=716s&ab_channel=brilex007-->
+    <div class="main-container">
+      <div class="container-ticket">
+        <div class="container-time">
+          <h2 class="heading">Åpent alle dager</h2>
+          <h3 class="heading-days">Mandag - Søndag</h3>
+          <h4>Fra klokken 10:00 - 19:00</h4>
+          <p>Barnebillett 49,-</p>
+          <p>Ungdomsbillett 79,-</p>
+          <p>Voksenbillett 99,-</p>
+          <p>Sesongkort for hele familien 999,-</p>
+        </div>
+        <div class="container-form">
+          <form action="#">
+            <h2 class="ticket-header">Bestill billetter</h2>
+
+            <div class="form-field">
+              <p>Navn</p>
+              <input type="text" placeholder="Ditt navn" />
+            </div>
+            <div class="form-field">
+              <p>E-post</p>
+              <input type="email" placeholder="E-post" />
+            </div>
+            <div class="form-field">
+              <p>Dato</p>
+              <input type="date" />
+            </div>
+            <div class="form-field">
+              <p>Voksen</p>
+              <select name="select" id="#">
+                <option value="0">--</option>
+                <option value="1">1 voksen</option>
+                <option value="2">2 voksen</option>
+                <option value="3">3 voksen</option>
+                <option value="4">4 voksen</option>
+                <option value="5">5 voksen</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <p>Ungdomsbillet (12-16 år)</p>
+              <select name="select" id="#">
+                <option value="0">--</option>
+                <option value="1">1 Ungdom</option>
+                <option value="2">2 Ungdom</option>
+                <option value="3">3 Ungdom</option>
+                <option value="4">4 Ungdom</option>
+                <option value="5">5 Ungdom</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <p>Barn</p>
+              <select name="select" id="#">
+                <option value="0">--</option>
+                <option value="1">1 barn</option>
+                <option value="2">2 barn</option>
+                <option value="3">3 barn</option>
+                <option value="4">4 barn</option>
+                <option value="5">5 barn</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <p>Sesongkort for hele familien</p>
+              <select name="select" id="#">
+                <option value="0">--</option>
+                <option value="1">1 Sesongkort</option>
+                <option value="2">2 Sesongkort</option>
+                <option value="3">3 Sesongkort</option>
+                <option value="4">4 Sesongkort</option>
+                <option value="5">5 Sesongkort</option>
+              </select>
+            </div>
+
+            <!--Tar også i bruk script for å lage varsel når man trykker på "Bestill"-knappen-->
+            <button onClick="myFunction()" class="ticket-btn">Bestill</button>
+            <script>
+              function myFunction() {
+                alert(
+                  "Takk for din bestilling. Dine biletter er nå sendt på e-post."
+                );
+              }
+            </script>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

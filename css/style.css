@@ -1,0 +1,410 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+a {
+  color: #4682b4;
+}
+/*index.html forside*/
+.frontpage {
+  font-size: large;
+  font-weight: bolder;
+}
+
+.background {
+  background-image: url(/images/sealion2.jpg);
+  padding: 300px 50px;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.background .main-container {
+  text-align: center;
+  margin-top: 120px;
+  color: #ffffff;
+}
+
+.background .main-container p {
+  margin: 10px;
+}
+
+/*Header. Kilde: https://www.youtube.com/watch?v=oLgtucwjVII&t=404s&ab_channel=CodingNepal*/
+.header {
+  background-color: white;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: white;
+  text-transform: uppercase;
+}
+
+.header ul a {
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.header ul a:hover {
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.header .logo {
+  float: left;
+  display: flex;
+  font-size: 30px;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+/*Bruker ease-out for å få en myk åpning/lukking av menyen*/
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.header .menu-icon {
+  padding: 23px 20px;
+  position: relative;
+  float: right;
+  cursor: pointer;
+}
+
+/*Styling av hamburger-meny/ikonet */
+.header .menu-icon .nav-icon {
+  background: #333;
+  display: block;
+  height: 2px;
+  width: 15px;
+  position: relative;
+  transition: background 0.2s ease-out;
+}
+/*Styling av hamburger-meny/ikonet. Jeg legger til :before og :after til de to siste strekene over og under*/
+.header .menu-icon .nav-icon:before {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  top: 5px;
+}
+/*Styling av hamburger-meny/ikonet */
+.header .menu-icon .nav-icon:after {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  top: -5px;
+}
+
+/*fjerne checkboxen*/
+.header .menu-btn {
+  display: none;
+}
+
+/*Når menyen vår er "checked", er når man trykker på hamburger-menyen, så vil den åpne/lukke seg når man trykker på den. Denne snakker med ".header .menu" samt at jeg har lagt til transition. */
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+/* For at gjøre meny responsiv*/
+@media (min-width: 850px) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+.order-btn {
+  margin: 12px;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  padding: 13px 25px;
+  font-size: 13px;
+  background: #4682b4;
+  cursor: pointer;
+}
+
+.order-btn:hover {
+  border: 1px solid #778899;
+  background: #778899;
+  transition: 2s;
+}
+
+/*Main content*/
+.content {
+  padding: 2rem;
+}
+
+.content ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 20px;
+}
+
+.content ul li {
+  border: 1px solid #e2e2e2;
+  border-radius: 0.5rem;
+}
+
+.content ul li figure {
+  max-height: 200px;
+  overflow: hidden;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  position: relative;
+}
+
+.content ul li figure img {
+  width: 100%;
+}
+
+.content ul li figure figcaption {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 100%;
+}
+
+.content ul li figure figcaption h3 {
+  color: black;
+  padding: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.content ul li p {
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 1rem 0.75rem;
+  color: #666666;
+}
+
+.content ul li a {
+  padding: 0.5rem 1rem;
+  margin-bottom: 20px;
+}
+
+.read-btn {
+  display: flex;
+  padding: 0 5px;
+  color: #4682b4;
+}
+
+.read-btn:hover {
+  opacity: 0.5;
+}
+
+/*Flexbox gallery*/
+.row {
+  text-align: center;
+}
+
+.img-gallery {
+  text-align: center;
+  font-size: 45px;
+  margin: 2rem;
+}
+
+.flex-gallery img {
+  width: 450px;
+  height: 300px;
+  transition: all 1s;
+}
+
+.flex-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/*FOOTER: jeg deler footer i to: right og left for å kunne style på separerte sider.*/
+
+.footer-container {
+  background: #4682b4;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  font: bold 16px sans-serif;
+  text-align: left;
+  padding: 50px 60px 40px;
+  overflow: hidden;
+}
+
+/* Footer left */
+
+.footer-container .footer-left {
+  float: left;
+}
+
+.footer-container .footer-links {
+  color: white;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.footer-container .footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: underline;
+  color: inherit;
+  padding-right: 20px;
+}
+
+.footer-container .footer-copyright {
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer right */
+
+.footer-container .footer-right {
+  float: right;
+}
+
+.footer-container .footer-right p {
+  display: inline-block;
+  vertical-align: top;
+  margin: 15px 42px 0 0;
+  color: #ffffff;
+}
+
+/*footer-form*/
+.footer-container form {
+  display: inline-block;
+}
+
+.footer-container form input {
+  display: block;
+  border-radius: 3px;
+  box-sizing: border-box;
+  background-color: white;
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 14px;
+  padding: 18px;
+  width: 400px;
+  height: 55px;
+  margin-bottom: 15px;
+}
+
+.footer-container ::-webkit-input-placeholder {
+  color: #5c666b;
+}
+
+.footer-container ::-moz-placeholder {
+  color: #5c666b;
+  opacity: 1;
+}
+
+.footer-container :-ms-input-placeholder {
+  color: #5c666b;
+}
+
+.footer-container form button {
+  border-radius: 3px;
+  background-color: #33383b;
+  color: #ffffff;
+  border: 0;
+  padding: 10px 35px;
+  font-weight: bold;
+  float: right;
+}
+
+.row {
+  width: 100%;
+}
+/*For å gjøre footer responsiv*/
+@media screen and (max-width: 800px) {
+  .row {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .footer-container form input {
+    float: left;
+  }
+
+  .footer-container .footer-company-name {
+    font-size: 12px;
+  }
+
+  .footer-container form button {
+    padding: 10px 35px;
+  }
+
+  .footer-container {
+    padding: 30px;
+  }
+
+  .footer-container .footer-left,
+  .footer-container .footer-right {
+    float: none;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .footer-container .footer-left {
+    margin-bottom: 40px;
+  }
+
+  .footer-container form {
+    margin-top: 30px;
+  }
+
+  .footer-container form {
+    display: block;
+  }
+
+  .footer-container form button {
+    float: none;
+  }
+}
